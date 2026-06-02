@@ -2,7 +2,7 @@
 
 # Mixfont JavaScript client
 
-A JavaScript client for the [Mixfont](https://www.mixfont.com) API. This open-source client lets you create AI-generated font files from Node.js and server-side JavaScript. Mixfont is a frontier AI font-generation model that allows users to create custom fonts in seconds. For more information, see the [Mixfont website](https://www.mixfont.com) and the [API documentation](https://www.mixfont.com/docs).
+A JavaScript client for the [Mixfont](https://www.mixfont.com) API. This open-source client lets you create AI-generated font files from Node.js and server-side JavaScript. Mixfont is a frontier AI [font generation](https://www.mixfont.com/font-generator) model that allows users to create custom fonts in seconds. For more information, see the [Mixfont website](https://www.mixfont.com) and the [API documentation](https://www.mixfont.com/docs).
 
 ## Supported platforms
 
