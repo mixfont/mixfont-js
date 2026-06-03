@@ -4,7 +4,7 @@
 
 A JavaScript client for the [Mixfont](https://www.mixfont.com) API. This open-source client lets you create AI-generated font files from Node.js and server-side JavaScript.
 
-Mixfont is a frontier AI lab developing generative AI for fonts. The Mixfont font generation model creates complete, web-safe TTF font files from a natural-language prompt or a public reference image, so applications can turn generated lettering, sketches, logos, or visual references into editable type instead of a flat image. Fonts generated via the API are unique and licensed for commercial use.
+Mixfont is a frontier AI lab developing generative AI for fonts. The Mixfont [font generation](https://www.mixfont.com/font-generator) model creates complete, web-safe TTF font files from a natural-language prompt or a public reference image, so applications can turn generated lettering, sketches, logos, or visual references into editable type instead of a flat image. Fonts generated via the API are unique and licensed for commercial use.
 
 For more information, see the [Mixfont website](https://www.mixfont.com) and the [full Mixfont documentation](https://www.mixfont.com/docs).
 
@@ -110,9 +110,6 @@ const mixfont = new Mixfont(options);
 | Option      | Type       | Description                                                    |
 | ----------- | ---------- | -------------------------------------------------------------- |
 | `apiKey`    | `string`   | Required. Mixfont API key.                                     |
-| `baseUrl`   | `string`   | Optional. Defaults to `https://api.mixfont.com/v1`.            |
-| `fetch`     | `function` | Optional fetch implementation. Defaults to `globalThis.fetch`. |
-| `userAgent` | `string`   | Optional user agent for requests.                              |
 
 ### `mixfont.generations.create(options)`
 
@@ -123,7 +120,6 @@ Starts a new font generation and returns immediately.
 | `prompt`   | `string`                   | Text prompt for the generated font.           |
 | `imageUrl` | `string`                   | Public HTTPS URL for a JPEG, PNG, or WebP reference image up to 20 MB. |
 | `glyphSet` | `"standard" \| "extended"` | Optional glyph set. Defaults to `standard`.   |
-| `fontName` | `string`                   | Optional display name for the generated font. |
 
 Provide exactly one of `prompt` or `imageUrl`.
 

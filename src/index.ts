@@ -27,7 +27,6 @@ export type Generation = {
 };
 
 type CreateGenerationBase = {
-  fontName?: string;
   glyphSet?: GenerationGlyphSet;
 };
 
@@ -49,9 +48,6 @@ export type WaitForGenerationOptions = {
 
 export type MixfontOptions = {
   apiKey: string;
-  baseUrl?: string;
-  fetch?: typeof fetch;
-  userAgent?: string;
 };
 
 type ApiGeneration = {
@@ -109,9 +105,7 @@ export class MixfontAbortError extends MixfontError {}
 
 class HttpClient {
   private readonly apiKey: string;
-  private readonly baseUrl: string;
   private readonly fetchImplementation: typeof fetch;
-  private readonly userAgent?: string;
 
   constructor(options: MixfontOptions) {
     const apiKey = options.apiKey.trim();
@@ -120,14 +114,12 @@ class HttpClient {
       throw new MixfontError("A Mixfont API key is required.");
     }
 
-    if (!options.fetch && typeof globalThis.fetch !== "function") {
+    if (typeof globalThis.fetch !== "function") {
       throw new MixfontError("No fetch implementation is available.");
     }
 
     this.apiKey = apiKey;
-    this.baseUrl = (options.baseUrl ?? DEFAULT_BASE_URL).replace(/\/+$/, "");
-    this.fetchImplementation = options.fetch ?? globalThis.fetch.bind(globalThis);
-    this.userAgent = options.userAgent;
+    this.fetchImplementation = globalThis.fetch.bind(globalThis);
   }
 
   async request<T>(
@@ -147,11 +139,7 @@ class HttpClient {
       headers["Content-Type"] = "application/json";
     }
 
-    if (this.userAgent) {
-      headers["User-Agent"] = this.userAgent;
-    }
-
-    const response = await this.fetchImplementation(`${this.baseUrl}${path}`, {
+    const response = await this.fetchImplementation(`${DEFAULT_BASE_URL}${path}`, {
       body: init.body === undefined ? undefined : JSON.stringify(init.body),
       headers,
       method: init.method,
@@ -188,7 +176,6 @@ export class GenerationsClient {
 
     const body = {
       ...(hasPrompt ? { prompt: options.prompt } : { image_url: options.imageUrl }),
-      ...(options.fontName ? { font_name: options.fontName } : {}),
       ...(options.glyphSet ? { glyph_set: options.glyphSet } : {}),
     };
     const path = hasPrompt ? "/font-generations/text" : "/font-generations/image";
