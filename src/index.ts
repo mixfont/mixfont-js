@@ -13,22 +13,17 @@ export type GenerationStatus =
 export type GenerationInputType = "text" | "image";
 export type GenerationGlyphSet = "standard" | "extended";
 
-export type GenerationFont = {
-  name: string;
-  url: string;
-};
-
 export type Generation = {
   id: string;
+  name: string;
+  ttfUrl: string | null;
   status: GenerationStatus;
   inputType: GenerationInputType;
   glyphSet: GenerationGlyphSet;
   progressPercent: number;
-  fonts: GenerationFont[];
-  error: string | null;
-  createdAt: string;
-  creditsCharged?: number;
   pollUrl?: string;
+  error?: string;
+  createdAt: string;
 };
 
 type CreateGenerationBase = {
@@ -61,15 +56,15 @@ export type MixfontOptions = {
 
 type ApiGeneration = {
   id: string;
+  name: string;
+  ttf_url: string | null;
   status: GenerationStatus;
   input_type: GenerationInputType;
   glyph_set: GenerationGlyphSet;
   progress_percent: number;
-  fonts?: GenerationFont[];
-  error: string | null;
-  created_at: string;
-  credits_charged?: number;
   poll_url?: string;
+  error?: string;
+  created_at: string;
 };
 
 export class MixfontError extends Error {
@@ -334,17 +329,15 @@ const readErrorMessage = (body: unknown) => {
 
 const toGeneration = (generation: ApiGeneration): Generation => ({
   id: generation.id,
+  name: generation.name,
+  ttfUrl: generation.ttf_url,
   status: generation.status,
   inputType: generation.input_type,
   glyphSet: generation.glyph_set,
   progressPercent: generation.progress_percent,
-  fonts: generation.fonts ?? [],
-  error: generation.error,
-  createdAt: generation.created_at,
-  ...(generation.credits_charged === undefined
-    ? {}
-    : { creditsCharged: generation.credits_charged }),
   ...(generation.poll_url === undefined ? {} : { pollUrl: generation.poll_url }),
+  ...(hasText(generation.error) ? { error: generation.error } : {}),
+  createdAt: generation.created_at,
 });
 
 const throwIfAborted = (signal: AbortSignal | undefined) => {

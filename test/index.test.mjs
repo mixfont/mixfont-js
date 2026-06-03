@@ -11,8 +11,8 @@ const apiGeneration = (overrides = {}) => ({
   input_type: "text",
   glyph_set: "standard",
   progress_percent: 0,
-  fonts: [],
-  error: null,
+  name: "Demo",
+  ttf_url: null,
   created_at: "2026-06-02T00:00:00.000Z",
   ...overrides,
 });
@@ -28,7 +28,6 @@ test("creates a text generation", async () => {
       return new Response(
         JSON.stringify(
           apiGeneration({
-            credits_charged: 15,
             poll_url: "https://api.test/v1/font-generations/gen_123",
           }),
         ),
@@ -52,8 +51,18 @@ test("creates a text generation", async () => {
     glyph_set: "extended",
   });
   assert.equal(generation.id, "gen_123");
-  assert.equal(generation.creditsCharged, 15);
   assert.equal(generation.pollUrl, "https://api.test/v1/font-generations/gen_123");
+  assert.deepEqual(Object.keys(generation), [
+    "id",
+    "name",
+    "ttfUrl",
+    "status",
+    "inputType",
+    "glyphSet",
+    "progressPercent",
+    "pollUrl",
+    "createdAt",
+  ]);
 });
 
 test("creates an image generation", async () => {
@@ -111,10 +120,8 @@ test("waits until a generation succeeds", async () => {
           apiGeneration({
             status,
             progress_percent: status === "succeeded" ? 100 : 40,
-            fonts:
-              status === "succeeded"
-                ? [{ name: "Demo", url: "https://static.test/demo.ttf" }]
-                : [],
+            ttf_url:
+              status === "succeeded" ? "https://static.test/demo.ttf" : null,
           }),
         ),
         { status: 200 },
@@ -128,7 +135,18 @@ test("waits until a generation succeeds", async () => {
   });
 
   assert.equal(generation.status, "succeeded");
-  assert.equal(generation.fonts[0].url, "https://static.test/demo.ttf");
+  assert.equal(generation.name, "Demo");
+  assert.equal(generation.ttfUrl, "https://static.test/demo.ttf");
+  assert.deepEqual(Object.keys(generation), [
+    "id",
+    "name",
+    "ttfUrl",
+    "status",
+    "inputType",
+    "glyphSet",
+    "progressPercent",
+    "createdAt",
+  ]);
 });
 
 test("throws when a generation fails", async () => {
