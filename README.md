@@ -10,18 +10,6 @@ For more information, see the [Mixfont website](https://www.mixfont.com) and the
 
 <br />
 
-## Create an API key
-
-To start making calls to the API you'll need an API key. If you don't already have a Mixfont account, visit [Mixfont](https://www.mixfont.com) and sign in.
-
-Go to the [Developer Console](https://www.mixfont.com/console/keys) to create your first API key. When calling the API, include the key in the `x-api-key` header for each request.
-
-<img src="https://static.mixfont.com/assets/20260602-212442-image-d3bfvtw5.webp" alt="Developer Console Key Creation Flow" width="1280" />
-
-Make sure to copy the API key to a safe place. The API key will only be visible in the dashboard once. If you lose your key, you'll have to create a new one.
-
-<br />
-
 ## Examples
 
 These examples show prompt and image inputs paired with generated font files from Mixfont.
@@ -120,6 +108,18 @@ Use text generation when you can describe the type direction, such as category, 
 Reference images should be publicly reachable HTTPS URLs that point to JPEG, PNG, or WebP files up to 20 MB. Clear images with readable letterforms, strong contrast, clean edges, and cropped text regions generally produce better results.
 
 Generated font files are returned as TTFs. Download or persist the returned `ttfUrl` after the job succeeds, then rehost the file in your own storage before using it in production. Returned TTF URLs are temporary and will be deleted within 24 hours.
+
+<br />
+
+## Create an API key
+
+To start making calls to the API you'll need an API key. If you don't already have a Mixfont account, visit [Mixfont](https://www.mixfont.com) and sign in.
+
+Go to the [Developer Console](https://www.mixfont.com/console/keys) to create your first API key. When calling the API, include the key in the `x-api-key` header for each request.
+
+<img src="https://static.mixfont.com/assets/20260602-212442-image-d3bfvtw5.webp" alt="Developer Console Key Creation Flow" width="1280" />
+
+Make sure to copy the API key to a safe place. The API key will only be visible in the dashboard once. If you lose your key, you'll have to create a new one.
 
 <br />
 
