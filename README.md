@@ -10,6 +10,18 @@ For more information, see the [Mixfont website](https://www.mixfont.com) and the
 
 <br />
 
+## Create an API key
+
+To start making calls to the API you'll need an API key. If you don't already have a Mixfont account, visit [Mixfont](https://www.mixfont.com) and sign in.
+
+Go to the [Developer Console](https://www.mixfont.com/console/keys) to create your first API key. When calling the API, include the key in the `x-api-key` header for each request.
+
+<img src="https://static.mixfont.com/assets/20260602-212442-image-d3bfvtw5.webp" alt="Developer Console Key Creation Flow" width="1280" />
+
+Make sure to copy the API key to a safe place. The API key will only be visible in the dashboard once. If you lose your key, you'll have to create a new one.
+
+<br />
+
 ## Examples
 
 These examples show prompt and image inputs paired with generated font files from Mixfont.
@@ -186,6 +198,8 @@ import { Mixfont, type Generation, type GenerationGlyphSet } from "mixfont";
 
 ## API
 
+<br />
+
 ### Constructor
 
 ```ts
@@ -195,6 +209,8 @@ const mixfont = new Mixfont(options);
 | Option      | Type       | Description                                                    |
 | ----------- | ---------- | -------------------------------------------------------------- |
 | `apiKey`    | `string`   | Required. Mixfont API key.                                     |
+
+<br />
 
 ### `mixfont.generations.create(options)`
 
@@ -208,6 +224,8 @@ Starts a new font generation and returns immediately.
 
 Provide exactly one of `prompt` or `imageUrl`.
 
+<br />
+
 ### Glyph sets
 
 | Glyph set  | Best for                                               | Glyphs | Typical timing |
@@ -217,9 +235,13 @@ Provide exactly one of `prompt` or `imageUrl`.
 
 `standard` includes English letters, numbers, and basic punctuation. `extended` supports all Latin languages, including special characters, and costs more API credits.
 
+<br />
+
 ### `mixfont.generations.get(id)`
 
 Fetches the current status of a generation.
+
+<br />
 
 ### `mixfont.generations.wait(id, options)`
 

@@ -1,7 +1,7 @@
 {
   "name": "mixfont",
   "version": "0.1.1",
-  "description": "Official JavaScript client for the Mixfont API.",
+  "description": "Official JavaScript client for the Mixfont AI font generation API.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -24,8 +24,14 @@
   "keywords": [
     "mixfont",
     "font",
-    "generation",
-    "sdk"
+    "fonts",
+    "font-generation",
+    "ai-fonts",
+    "typeface",
+    "typography",
+    "sdk",
+    "javascript",
+    "typescript"
   ],
   "author": "Mixfont",
   "license": "Apache-2.0",
