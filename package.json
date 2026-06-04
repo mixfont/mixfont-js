@@ -1,6 +1,6 @@
 {
   "name": "mixfont",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Official JavaScript client for the Mixfont AI font generation API.",
   "type": "module",
   "main": "./dist/index.js",
