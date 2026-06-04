@@ -1,6 +1,26 @@
-<img src="https://static.mixfont.com/assets/20260604-033721-image-4hk1jdqm.webp" alt="Mixfont banner" width="1280" />
+<p align="center">
+  <img src="https://static.mixfont.com/assets/20260604-033721-image-4hk1jdqm.webp" alt="Mixfont banner" width="1280" />
+</p>
 
-# Official Mixfont JavaScript Client
+<h1 align="center">Official Mixfont JavaScript Client</h1>
+
+<p align="center">
+  State-of-the-art Font Generation Model
+</p>
+
+<p align="center">
+  <a href="https://www.mixfont.com"><img src="https://img.shields.io/badge/Website-mixfont.com-111111" alt="Mixfont website" /></a>
+  <a href="https://github.com/mixfont"><img src="https://img.shields.io/badge/GitHub-mixfont-111111" alt="Mixfont GitHub" /></a>
+  <a href="https://x.com/mixfont"><img src="https://img.shields.io/badge/X-@mixfont-111111" alt="Mixfont on X" /></a>
+</p>
+
+<p align="center">
+  <a href="#examples">Examples</a> |
+  <a href="#supported-platforms">Supported platforms</a> |
+  <a href="#how-font-generation-works">How it works</a> |
+  <a href="#model-inputs-and-outputs">Model inputs</a> |
+  <a href="#usage">Usage</a>
+</p>
 
 The official JavaScript client for the [Mixfont](https://www.mixfont.com) AI font generation API. This open-source client lets you create AI-generated font files from Node.js and server-side JavaScript.
 
@@ -280,3 +300,11 @@ Keep your API key on the server and read it from an environment variable such as
 npm install
 npm test
 ```
+
+<br />
+
+## Links
+
+- [Website](https://www.mixfont.com)
+- [GitHub](https://github.com/mixfont)
+- [X](https://x.com/mixfont)
