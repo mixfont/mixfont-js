@@ -9,7 +9,7 @@ const DEFAULT_BASE_URL = "https://api.mixfont.com/v1";
 
 const apiGeneration = (overrides = {}) => ({
   id: "gen_123",
-  status: "queued",
+  status: "preparing",
   input_type: "text",
   glyph_set: "standard",
   progress_percent: 0,
@@ -60,6 +60,7 @@ test("creates a text generation", async () => {
     glyph_set: "extended",
   });
   assert.equal(generation.id, "gen_123");
+  assert.equal(generation.status, "preparing");
   assert.equal(
     generation.pollUrl,
     `${DEFAULT_BASE_URL}/font-generations/gen_123`,
@@ -109,6 +110,7 @@ test("gets a generation", async () => {
   const generation = await client.generations.get("gen_123");
 
   assert.equal(generation.id, "gen_123");
+  assert.equal(generation.status, "preparing");
 });
 
 test("waits until a generation succeeds", async () => {

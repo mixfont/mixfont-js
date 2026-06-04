@@ -3,7 +3,7 @@ const DEFAULT_WAIT_INTERVAL_MS = 5_000;
 const DEFAULT_WAIT_TIMEOUT_MS = 10 * 60 * 1_000;
 
 export type GenerationStatus =
-  | "enriching"
+  | "preparing"
   | "queued"
   | "running"
   | "succeeded"
