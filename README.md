@@ -57,8 +57,7 @@ These examples show prompt and image inputs paired with generated font files fro
         generate a font for a soccer team logo. Make the letterforms soccer themed, bold, and unique.
       </td>
       <td>
-        <strong>Cipher Striker Ultra</strong><br />
-        STRIKERS SOCCER TEAM<br />
+        <img src="https://static.mixfont.com/assets/20260604-035208-image-8ttcinix.webp" alt="Cipher Striker Ultra generated font preview" width="480" /><br />
         <a href="https://static.mixfont.com/assets/20260603-224831-font-001-cipherstrikerultra-regular-1uj742pz.ttf">Download Cipher-Striker-Ultra.ttf</a>
       </td>
     </tr>
@@ -67,9 +66,17 @@ These examples show prompt and image inputs paired with generated font files fro
         <img src="https://static.mixfont.com/assets/20260603-230108-image-e3prnt68.webp" alt="Wuthering Heights input example" width="220" />
       </td>
       <td>
-        <strong>Wuthering Heights Display</strong><br />
-        Wuthering Heights - Margot Robbie and Jacob Elordi<br />
+        <img src="https://static.mixfont.com/assets/20260604-035246-image-l75vnkaz.webp" alt="Wuthering Heights Display generated font preview" width="480" /><br />
         <a href="https://static.mixfont.com/assets/20260603-230122-font-001-generatedfont-regular-1-yrpido7g.ttf">Download Wuthering-Heights-Display.ttf</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://static.mixfont.com/assets/20260603-210216-image-n06hmmov.webp" alt="Gossamer Editorial Serif input example" width="220" />
+      </td>
+      <td>
+        <img src="https://static.mixfont.com/assets/20260604-035352-image-um7d7s4q.webp" alt="Gossamer Editorial Serif generated font preview" width="480" /><br />
+        <a href="https://static.mixfont.com/assets/20260603-212006-font-001-gossamereditorialserif-regular-1-weyynop8.ttf">Download Gossamer-Editorial-Serif.ttf</a>
       </td>
     </tr>
     <tr>
@@ -77,8 +84,7 @@ These examples show prompt and image inputs paired with generated font files fro
         <img src="https://static.mixfont.com/assets/20260603-225224-image-9sw57q4v.webp" alt="HANDY DAN'S Property Maintanence input example" width="220" />
       </td>
       <td>
-        <strong>Dystopian Brush Stroke Display</strong><br />
-        HANDY DAN'S PROPERTY MAINTANENCE<br />
+        <img src="https://static.mixfont.com/assets/20260604-035258-image-hdz1y9zh.webp" alt="Dystopian Brush Stroke Display generated font preview" width="480" /><br />
         <a href="https://static.mixfont.com/assets/20260603-225219-font-001-dystopianbrushstrokedisplay-regular-chnivcf8.ttf">Download Dystopian-Brush-Stroke-Display.ttf</a>
       </td>
     </tr>
@@ -87,8 +93,7 @@ These examples show prompt and image inputs paired with generated font files fro
         <img src="https://static.mixfont.com/assets/20260603-230210-image-5lg2741x.webp" alt="NASA logo input example" width="220" />
       </td>
       <td>
-        <strong>Dissonant Wave Sans</strong><br />
-        NASA - this preview text was generated from the NASA logo<br />
+        <img src="https://static.mixfont.com/assets/20260604-035311-image-o2w16gf5.webp" alt="Dissonant Wave Sans generated font preview" width="480" /><br />
         <a href="https://static.mixfont.com/assets/20260603-230230-font-001-dissonantwavesans-regular-z9d7o2ui.ttf">Download Dissonant-Wave-Sans.ttf</a>
       </td>
     </tr>
@@ -97,8 +102,7 @@ These examples show prompt and image inputs paired with generated font files fro
         <img src="https://static.mixfont.com/assets/20260603-230651-image-cgq0gjku.webp" alt="Natural handwriting input example" width="220" />
       </td>
       <td>
-        <strong>Zephyr Ink Script</strong><br />
-        This is a small sample of my natural handwriting as a font<br />
+        <img src="https://static.mixfont.com/assets/20260604-035322-image-bz6cmt09.webp" alt="Zephyr Ink Script generated font preview" width="480" /><br />
         <a href="https://static.mixfont.com/assets/20260603-230724-font-001-zephyrinkscript-regular-81hj01mq.ttf">Download Zephyr-Ink-Script.ttf</a>
       </td>
     </tr>
