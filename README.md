@@ -2,10 +2,10 @@
   <img src="https://static.mixfont.com/assets/20260604-033721-image-4hk1jdqm.webp" alt="Mixfont banner" width="1280" />
 </p>
 
-<h1 align="center">Official Mixfont JavaScript SDK</h1>
+<h1 align="center">State-of-the-art AI Font Generation Model</h1>
 
 <p align="center">
-  State-of-the-art Font Generation Model
+  Official Mixfont JavaScript SDK
 </p>
 
 <p align="center">
