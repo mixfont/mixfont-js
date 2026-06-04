@@ -1,8 +1,8 @@
 <img src="https://static.mixfont.com/assets/20260604-033721-image-4hk1jdqm.webp" alt="Mixfont banner" width="1280" />
 
-# Mixfont JavaScript client
+# Official Mixfont JavaScript Client
 
-A JavaScript client for the [Mixfont](https://www.mixfont.com) API. This open-source client lets you create AI-generated font files from Node.js and server-side JavaScript.
+The official JavaScript client for the [Mixfont](https://www.mixfont.com) AI font generation API. This open-source client lets you create AI-generated font files from Node.js and server-side JavaScript.
 
 Mixfont is a frontier AI lab developing generative AI for fonts. The Mixfont [font generation](https://www.mixfont.com/font-generator) model creates complete, web-safe TTF font files from a natural-language prompt or a public reference image, so applications can turn generated lettering, sketches, logos, or visual references into editable type instead of a flat image. Fonts generated via the API are unique and licensed for commercial use.
 
@@ -134,6 +134,8 @@ npm install mixfont
 <br />
 
 ## Usage
+
+For the full API documentation, see [Mixfont docs](https://www.mixfont.com/docs).
 
 Import the package:
 
