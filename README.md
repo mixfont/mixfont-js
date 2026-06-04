@@ -1,4 +1,4 @@
-<img src="./assets/mixfont-banner.webp" alt="Mixfont banner" width="1280" />
+<img src="https://static.mixfont.com/assets/20260604-033721-image-4hk1jdqm.webp" alt="Mixfont banner" width="1280" />
 
 # Mixfont JavaScript client
 
@@ -8,12 +8,16 @@ Mixfont is a frontier AI lab developing generative AI for fonts. The Mixfont [fo
 
 For more information, see the [Mixfont website](https://www.mixfont.com) and the [full Mixfont documentation](https://www.mixfont.com/docs).
 
+<br />
+
 ## Supported platforms
 
 - Node.js >= 18
 - Serverless runtimes including Vercel Functions, Cloudflare Workers, and AWS Lambda.
 
 > Note: This client is not designed for in-browser usage.
+
+<br />
 
 ## How font generation works
 
@@ -24,6 +28,8 @@ Font generation is asynchronous. Start a generation with exactly one input:
 
 The create call returns a generation `id` and, when available, a polling URL. Use `mixfont.generations.wait(...)` for built-in polling, or call `mixfont.generations.get(...)` yourself until the status reaches `succeeded`, `failed`, or `cancelled`. When a job succeeds, `ttfUrl` contains the generated TTF download URL.
 
+<br />
+
 ## Model inputs and outputs
 
 Use text generation when you can describe the type direction, such as category, style, use case, spacing, contrast, or distinctive details. Use image generation when a visual reference is the clearest source of truth, such as a sketch, sign, logo, poster, screenshot, or existing design mockup.
@@ -32,6 +38,75 @@ Reference images should be publicly reachable HTTPS URLs that point to JPEG, PNG
 
 Generated font files are returned as TTFs. Download or persist the returned `ttfUrl` after the job succeeds, then rehost the file in your own storage before using it in production. Returned TTF URLs are temporary and will be deleted within 24 hours.
 
+<br />
+
+## Use cases
+
+These examples show prompt and image inputs paired with generated font files from Mixfont.
+
+<table>
+  <thead>
+    <tr>
+      <th align="left" width="30%">Input</th>
+      <th align="left" width="70%">Generated font preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        generate a font for a soccer team logo. Make the letterforms soccer themed, bold, and unique.
+      </td>
+      <td>
+        <strong>Cipher Striker Ultra</strong><br />
+        STRIKERS SOCCER TEAM<br />
+        <a href="https://static.mixfont.com/assets/20260603-224831-font-001-cipherstrikerultra-regular-1uj742pz.ttf">Download Cipher-Striker-Ultra.ttf</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://static.mixfont.com/assets/20260603-230108-image-e3prnt68.webp" alt="Wuthering Heights input example" width="220" />
+      </td>
+      <td>
+        <strong>Wuthering Heights Display</strong><br />
+        Wuthering Heights - Margot Robbie and Jacob Elordi<br />
+        <a href="https://static.mixfont.com/assets/20260603-230122-font-001-generatedfont-regular-1-yrpido7g.ttf">Download Wuthering-Heights-Display.ttf</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://static.mixfont.com/assets/20260603-225224-image-9sw57q4v.webp" alt="HANDY DAN'S Property Maintanence input example" width="220" />
+      </td>
+      <td>
+        <strong>Dystopian Brush Stroke Display</strong><br />
+        HANDY DAN'S PROPERTY MAINTANENCE<br />
+        <a href="https://static.mixfont.com/assets/20260603-225219-font-001-dystopianbrushstrokedisplay-regular-chnivcf8.ttf">Download Dystopian-Brush-Stroke-Display.ttf</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://static.mixfont.com/assets/20260603-230210-image-5lg2741x.webp" alt="NASA logo input example" width="220" />
+      </td>
+      <td>
+        <strong>Dissonant Wave Sans</strong><br />
+        NASA - this preview text was generated from the NASA logo<br />
+        <a href="https://static.mixfont.com/assets/20260603-230230-font-001-dissonantwavesans-regular-z9d7o2ui.ttf">Download Dissonant-Wave-Sans.ttf</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://static.mixfont.com/assets/20260603-230651-image-cgq0gjku.webp" alt="Natural handwriting input example" width="220" />
+      </td>
+      <td>
+        <strong>Zephyr Ink Script</strong><br />
+        This is a small sample of my natural handwriting as a font<br />
+        <a href="https://static.mixfont.com/assets/20260603-230724-font-001-zephyrinkscript-regular-81hj01mq.ttf">Download Zephyr-Ink-Script.ttf</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
 ## Installation
 
 Install it from npm:
@@ -39,6 +114,8 @@ Install it from npm:
 ```sh
 npm install mixfont
 ```
+
+<br />
 
 ## Usage
 
@@ -91,6 +168,8 @@ const generation = await mixfont.generations.create({
 });
 ```
 
+<br />
+
 ## TypeScript
 
 This package includes TypeScript definitions.
@@ -98,6 +177,8 @@ This package includes TypeScript definitions.
 ```ts
 import { Mixfont, type Generation, type GenerationGlyphSet } from "mixfont";
 ```
+
+<br />
 
 ## API
 
@@ -149,13 +230,21 @@ Checks the generation until it reaches a terminal status.
 `wait` returns the completed generation when it succeeds. It throws if the
 generation fails, is cancelled, or times out.
 
+<br />
+
 ## Best practices
 
-- Write specific prompts that describe the type category, visual style, intended use case, and distinctive details.
-- Start with `standard` when comparing directions, then use `extended` once you have a candidate worth testing more deeply.
-- Store the generation `id`, original prompt or image URL, and `glyphSet` with each result so your team can compare outputs later.
-- Test generated fonts in real content, including headings, numbers, punctuation, labels, and the longest strings your product needs to support.
-- Keep your API key on the server and read it from an environment variable such as `MIXFONT_API_KEY`.
+Write specific prompts that describe the type category, visual style, intended use case, and distinctive details.
+
+Start with `standard` when comparing directions, then use `extended` once you have a candidate worth testing more deeply.
+
+Store the generation `id`, original prompt or image URL, and `glyphSet` with each result so your team can compare outputs later.
+
+Test generated fonts in real content, including headings, numbers, punctuation, labels, and the longest strings your product needs to support.
+
+Keep your API key on the server and read it from an environment variable such as `MIXFONT_API_KEY`.
+
+<br />
 
 ## Development
 
@@ -163,7 +252,3 @@ generation fails, is cancelled, or times out.
 npm install
 npm test
 ```
-
-## Publishing
-
-See [PUBLISHING.md](./PUBLISHING.md).

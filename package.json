@@ -12,7 +12,6 @@
     }
   },
   "files": [
-    "assets",
     "dist",
     "README.md",
     "LICENSE"
@@ -40,9 +39,6 @@
   "homepage": "https://github.com/mixfont/mixfont-js#readme",
   "engines": {
     "node": ">=18"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "devDependencies": {
     "typescript": "^5.9.2"
