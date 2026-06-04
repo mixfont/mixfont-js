@@ -10,37 +10,7 @@ For more information, see the [Mixfont website](https://www.mixfont.com) and the
 
 <br />
 
-## Supported platforms
-
-- Node.js >= 18
-- Serverless runtimes including Vercel Functions, Cloudflare Workers, and AWS Lambda.
-
-> Note: This client is not designed for in-browser usage.
-
-<br />
-
-## How font generation works
-
-Font generation is asynchronous. Start a generation with exactly one input:
-
-- `prompt`: a text description of the font to generate.
-- `imageUrl`: a public HTTPS reference image for the style you want the model to follow.
-
-The create call returns a generation `id` and, when available, a polling URL. Use `mixfont.generations.wait(...)` for built-in polling, or call `mixfont.generations.get(...)` yourself until the status reaches `succeeded`, `failed`, or `cancelled`. When a job succeeds, `ttfUrl` contains the generated TTF download URL.
-
-<br />
-
-## Model inputs and outputs
-
-Use text generation when you can describe the type direction, such as category, style, use case, spacing, contrast, or distinctive details. Use image generation when a visual reference is the clearest source of truth, such as a sketch, sign, logo, poster, screenshot, or existing design mockup.
-
-Reference images should be publicly reachable HTTPS URLs that point to JPEG, PNG, or WebP files up to 20 MB. Clear images with readable letterforms, strong contrast, clean edges, and cropped text regions generally produce better results.
-
-Generated font files are returned as TTFs. Download or persist the returned `ttfUrl` after the job succeeds, then rehost the file in your own storage before using it in production. Returned TTF URLs are temporary and will be deleted within 24 hours.
-
-<br />
-
-## Use cases
+## Examples
 
 These examples show prompt and image inputs paired with generated font files from Mixfont.
 
@@ -108,6 +78,36 @@ These examples show prompt and image inputs paired with generated font files fro
     </tr>
   </tbody>
 </table>
+
+<br />
+
+## Supported platforms
+
+- Node.js >= 18
+- Serverless runtimes including Vercel Functions, Cloudflare Workers, and AWS Lambda.
+
+> Note: This client is not designed for in-browser usage.
+
+<br />
+
+## How font generation works
+
+Font generation is asynchronous. Start a generation with exactly one input:
+
+- `prompt`: a text description of the font to generate.
+- `imageUrl`: a public HTTPS reference image for the style you want the model to follow.
+
+The create call returns a generation `id` and, when available, a polling URL. Use `mixfont.generations.wait(...)` for built-in polling, or call `mixfont.generations.get(...)` yourself until the status reaches `succeeded`, `failed`, or `cancelled`. When a job succeeds, `ttfUrl` contains the generated TTF download URL.
+
+<br />
+
+## Model inputs and outputs
+
+Use text generation when you can describe the type direction, such as category, style, use case, spacing, contrast, or distinctive details. Use image generation when a visual reference is the clearest source of truth, such as a sketch, sign, logo, poster, screenshot, or existing design mockup.
+
+Reference images should be publicly reachable HTTPS URLs that point to JPEG, PNG, or WebP files up to 20 MB. Clear images with readable letterforms, strong contrast, clean edges, and cropped text regions generally produce better results.
+
+Generated font files are returned as TTFs. Download or persist the returned `ttfUrl` after the job succeeds, then rehost the file in your own storage before using it in production. Returned TTF URLs are temporary and will be deleted within 24 hours.
 
 <br />
 
